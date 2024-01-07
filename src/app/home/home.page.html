@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ionic Forms
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item id="item">
+    <ion-label>
+      {{data?.name}}
+      <p>{{data?.email}} | {{data?.phone}}</p>
+    </ion-label>
+    <ion-button slot="end">EDIT</ion-button>
+  </ion-item>
+
+  <ion-modal trigger="item" [breakpoints]="[0, 0.5, 0.8]" [initialBreakpoint]="0.8">
+    <ng-template>
+      <app-edit-profile [profile]="data"></app-edit-profile>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>
